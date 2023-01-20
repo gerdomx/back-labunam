@@ -23,6 +23,7 @@ class UsuarioRequest extends FormRequest
     return [
       "name" => ["required", Rule::unique("users")->ignore($this->id)],
       "password" => $rulesPassword,
+      "rol" => ["required"],
     ];
   }
   public function messages()
@@ -31,6 +32,7 @@ class UsuarioRequest extends FormRequest
       "name.required" => "Nombre de usuario obligatorio",
       "name.unique" => "Nombre de usuario ya registrado",
       "password.required" => "Contraseña de usuario obligatoría",
+      "rol.required" => "Rol de usuario obligatorío",
     ];
   }
 }

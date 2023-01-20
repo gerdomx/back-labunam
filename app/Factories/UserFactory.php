@@ -17,6 +17,7 @@ class UserFactory extends BaseFactory
   {
     $item = $this->createItem($user);
     $item->name = $data->name;
+    $item->rol = $data->rol;
     if (!empty($data->password)) {
       $item->password = Hash::make($data->password);
     }
