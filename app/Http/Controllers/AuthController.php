@@ -30,7 +30,7 @@ class AuthController extends Controller
     return response()->json([
       "status" => true,
       "token" => $token->plainTextToken,
-      "user" => $user->only(["id", "name"]),
+      "user" => $user->only(["id", "name", "rol"]),
     ]);
   }
 
@@ -49,7 +49,7 @@ class AuthController extends Controller
     return  response()->json([
       'status' => true,
       "token" => $token->plainTextToken,
-      "user" => $request->user()->only(["id", "name"]),
+      "user" => $request->user()->only(["id", "name", "rol"]),
     ]);
   }
 }

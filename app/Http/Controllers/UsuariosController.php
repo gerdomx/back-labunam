@@ -29,10 +29,10 @@ class UsuariosController extends Controller
   }
   public function getUser(User $user)
   {
-    $item =  $this->repository->get($user->id);
+    // $item =  $this->repository->get($user->id);
     return response()->json([
       'status' => true,
-      'item' => $item
+      'item' => $user
     ]);
   }
 
