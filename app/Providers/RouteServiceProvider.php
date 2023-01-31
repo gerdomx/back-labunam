@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
       // test
       Route::middleware('web')
         ->group(base_path('routes/web.php'));
-        // auth api
+      // auth api
       Route::middleware('api')
         ->prefix('api/v1/auth')
         ->group(base_path('routes/v1/auth.php'));
@@ -27,6 +27,10 @@ class RouteServiceProvider extends ServiceProvider
       Route::middleware('api')
         ->prefix('api/v1/usuarios')
         ->group(base_path('routes/v1/usuarios.php'));
+      // usuarios
+      Route::middleware('api')
+        ->prefix('api/v1/indicadores')
+        ->group(base_path('routes/v1/indicadores.php'));
     });
   }
 
